@@ -1,0 +1,55 @@
+
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  // font-weight, font-size/line-height, font-family
+  font: normal 24px/1.5 $font-family;
+  color: $cool-red;
+}
+
+th {
+  font : bold 18px/1 $font-family;
+  color: $cool-red;
+  @include small {
+    color: $blue;
+  }
+}
+
+tr {
+  & > td {
+    @extend th;
+    color: #000;
+    font-weight: normal;
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      & > a {
+        background: $red;
+      }
+    }
+    & > a {
+        background: $yellow;
+    }
+    // font : normal 18px/1 $font-family;
+    // color: #000;
+    // @include small {
+    //   color: $blue;
+    // }
+  }
+}
+
+.mybutton {
+  @include button($blue, 2px, 1rem, 2rem, bold)
+}
+
+.otherbutton {
+@include button ($red, 1px, 2rem, 1rem, normal)
+// color: $red;
+// border: 1px solid $button-border;
+// padding: 2rem;
+// font-size: 1rem;
+// font-weight: normal;
+}
